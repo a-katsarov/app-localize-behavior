@@ -214,7 +214,7 @@ Polymer.AppLocalizeBehavior = {
       var msg = proto.__localizationCache.messages[messageKey];
 
       if (!msg) {
-        msg = new IntlMessageFormat(resources[language][key], language, formats);
+        msg = new IntlMessageFormat(resources[language][key] || key, language, formats);
         proto.__localizationCache.messages[messageKey] = msg;
       }
 
